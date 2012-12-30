@@ -1,6 +1,8 @@
 FILE="version.nfo"
 FILE_INCREMENTAL="version.incremental"
 
+
+
 VERSION_INFO=`cat "$FILE"`
 
 VERSION_MAJOR=`echo $VERSION_INFO | cut -d "." -f 1`

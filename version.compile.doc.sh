@@ -1,6 +1,8 @@
-SOURCE_DIR=/Users/ibon/js/CAAT/src
+SOURCE_DIR=/Users/yeungmoses/TestApp/git_project/CAAT/src
+DEST_DIR=/Users/yeungmoses/TestApp/git_project/CAAT/documentation/jsdoc
+TOOL_DIR=/Users/yeungmoses/Documents/caat_tools
 
-/usr/bin/java -jar /Users/ibon/applications/jsdoc-toolkit/jsrun.jar /Users/ibon/applications/jsdoc-toolkit/app/run.js -a -v -p -r=4 -t=/Users/ibon/applications/jsdoc-toolkit/templates/jsdoc \
+/usr/bin/java -jar "${TOOL_DIR}"/jsdoc-toolkit/jsrun.jar "${TOOL_DIR}"/jsdoc-toolkit/app/run.js -a -v -p -r=4 -t="${TOOL_DIR}"/jsdoc-toolkit/templates/jsdoc \
 "${SOURCE_DIR}"/CAAT.js \
 "${SOURCE_DIR}"/Core/ModuleManager.js \
 "${SOURCE_DIR}"/Core/Constants.js \
@@ -81,4 +83,4 @@ SOURCE_DIR=/Users/ibon/js/CAAT/src
 "${SOURCE_DIR}"/Foundation/UI/ShapeActor.js \
 "${SOURCE_DIR}"/Foundation/UI/StarActor.js \
 "${SOURCE_DIR}"/Foundation/UI/TextActor.js \
-  -d=/Users/ibon/js/CAAT/documentation/jsdoc
+  -d="${DEST_DIR}"

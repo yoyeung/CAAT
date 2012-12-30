@@ -1,18 +1,23 @@
-if [ "${CAAT_DST}" == "" ]; then
-  echo CAAT_DST is not defined.
-  exit -1;
-fi
+# if [ "${CAAT_DST}" == "" ]; then
+#   echo CAAT_DST is not defined.
+#   exit -1;
+# fi
+CAAT_DST='caat'
 
 echo -e "\n\nCompilation process\n\n"
+
+
+./version.compile.pack.sh
+
 
 #
 # define CAAT products files.
 #
 DST_FILE_NAME="${CAAT_DST}";
 
-FILE_CAAT="${DST_FILE_NAME}-min.js"
-FILE_CAAT_CSS="${DST_FILE_NAME}-css-min.js"
-FILE_CAAT_BOX2D="${DST_FILE_NAME}-box2d-min.js"
+FILE_CAAT=build/"${DST_FILE_NAME}-min.js"
+FILE_CAAT_CSS=build/"${DST_FILE_NAME}-css-min.js"
+FILE_CAAT_BOX2D=build/"${DST_FILE_NAME}-box2d-min.js"
 
 #
 # DST_FILE is a file name.
@@ -25,7 +30,8 @@ echo "" > "${FILE_CAAT}"
 echo "" > "${FILE_CAAT_CSS}"
 echo "" > "${FILE_CAAT_BOX2D}"
 
-SOURCE_DIR=/Users/ibon/js/CAAT/src
+SOURCE_DIR=/Users/yeungmoses/TestApp/git_project/CAAT/src
+TOOL_DIR=/Users/yeungmoses/Documents/caat_tools
 
 #
 # set compilation level
@@ -89,7 +95,7 @@ echo -e "*/\n\n" >> "${FILE_CAAT_BOX2D}"
 # Compile canvas/GL
 #
 echo -e "\nCreating CAAT canvas/webGL"
-/usr/bin/java -jar /Users/ibon/applications/closure/compiler.jar --compilation_level "${COMPILATION_LEVEL}" \
+/usr/bin/java -jar "${TOOL_DIR}"/closure/compiler.jar --compilation_level "${COMPILATION_LEVEL}" \
 --js build/caat.js \
  >> "${FILE_CAAT}"
 
@@ -97,14 +103,14 @@ echo -e "\nCreating CAAT canvas/webGL"
 # Compile box2d
 #
 echo "Creating CAAT Box2d"
- /usr/bin/java -jar /Users/ibon/applications/closure/compiler.jar --compilation_level "${COMPILATION_LEVEL}" --js build/caat-box2d.js >> "${FILE_CAAT_BOX2D}"
+ /usr/bin/java -jar "${TOOL_DIR}"/closure/compiler.jar --compilation_level "${COMPILATION_LEVEL}" --js build/caat-box2d.js >> "${FILE_CAAT_BOX2D}"
 
 #
 # Compile css
 #
 echo "Creating CAAT CSS"
 echo -e "CAAT.__CSS__=1;" >> /tmp/__css.js
-java -jar /Users/ibon/applications/closure/compiler.jar --compilation_level "${COMPILATION_LEVEL}" \
+java -jar "${TOOL_DIR}"/closure/compiler.jar --compilation_level "${COMPILATION_LEVEL}" \
  --js build/caat-css.js >> "${FILE_CAAT_CSS}"
 
 #
@@ -118,7 +124,7 @@ while read LINE; do
   cp ${FILE_CAAT_BOX2D} ${LINE} 
 done < version.distribution
 
-./version.compile.pack.sh
+#./version.compile.pack.sh
 
 #
 # Generating JSDoc.

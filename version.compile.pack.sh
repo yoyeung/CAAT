@@ -3,6 +3,7 @@
 # version.nfo contains new version value.
 #
 ./version.sh
+CAAT_DST='caat'
 VERSION=`cat version.nfo`
 echo "New generated version: ${VERSION}"
 
@@ -11,9 +12,9 @@ DST_FILE_NAME="${CAAT_DST}";
 
 VERSION=`cat version.nfo`
 
-FILE_CAAT="${DST_FILE_NAME}.js"
-FILE_CAAT_CSS="${DST_FILE_NAME}-css.js"
-FILE_CAAT_BOX2D="${DST_FILE_NAME}-box2d.js"
+FILE_CAAT=build/"${DST_FILE_NAME}.js"
+FILE_CAAT_CSS=build/"${DST_FILE_NAME}-css.js"
+FILE_CAAT_BOX2D=build/"${DST_FILE_NAME}-box2d.js"
 
 echo "Packing ${FILE_CAAT}"
 echo -e "/*" > "${FILE_CAAT}"
