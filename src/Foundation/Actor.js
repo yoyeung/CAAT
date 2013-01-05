@@ -2080,6 +2080,9 @@ CAAT.Module({
                 this.mouseUp=       function() {};
                 this.mouseClick=    function() {};
                 this.mouseDrag=     function() {};
+                this.touchStart= function(){};
+                this.touchMove= function(){};
+                this.touchEnd =function(){};
                 return this;
             },
             /**
@@ -2173,6 +2176,23 @@ CAAT.Module({
                     }
 
                     this.setSpriteIndex(this.iPress);
+                };
+                this.touchStart = function(e){
+                    if (!this.enabled) {
+                        return;
+                    }
+
+                    this.setSpriteIndex(this.iPress);
+                };
+
+                this.touchEnd = function (mouseEvent) {
+                    if (!this.enabled) {
+                        return;
+                    }
+
+                    this.setSpriteIndex(this.iNormal);
+                    CAAT.setCursor('default');
+                    this.actionPerformed(e);
                 };
 
                 /**
