@@ -21,11 +21,11 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
-Version: . build: 73
+Version: . build: 78
 
 Created on:
-DATE: 2012-12-30
-TIME: 19:48:03
+DATE: 2013-01-11
+TIME: 10:53:51
 */
 
 
@@ -17500,9 +17500,12 @@ CAAT.Module({
                 if ( typeof canvas!=="undefined" ) {
                     if ( isString(canvas) ) {
                         canvas= document.getElementById(canvas);
-                    } else if ( !(canvas instanceof HTMLCanvasElement ) ) {
-                        console.log("Canvas is a: "+canvas+" ???");
+                    } else if((typeof ejecta  === 'undefined')){
+                            if ( !(canvas instanceof HTMLCanvasElement ) ) {
+                                console.log("Canvas is a: "+canvas+" ???");
+                            }
                     }
+                    
                 }
 
                 if (!canvas) {
@@ -18770,7 +18773,7 @@ CAAT.Module({
                 var top = prop + 'Top';
                 var x = 0, y = 0, style;
 
-                while (navigator.browser !== 'iOS' && node && node.style) {
+                while ( (typeof ejecta  === 'undefined') && navigator.browser !== 'iOS' && node && node.style) {
                     if (node.currentStyle) {
                         style = node.currentStyle['position'];
                     } else {

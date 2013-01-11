@@ -387,9 +387,12 @@ CAAT.Module({
                 if ( typeof canvas!=="undefined" ) {
                     if ( isString(canvas) ) {
                         canvas= document.getElementById(canvas);
-                    } else if ( !(canvas instanceof HTMLCanvasElement ) ) {
-                        console.log("Canvas is a: "+canvas+" ???");
+                    } else if((typeof ejecta  === 'undefined')){
+                            if ( !(canvas instanceof HTMLCanvasElement ) ) {
+                                console.log("Canvas is a: "+canvas+" ???");
+                            }
                     }
+                    
                 }
 
                 if (!canvas) {
@@ -1657,7 +1660,7 @@ CAAT.Module({
                 var top = prop + 'Top';
                 var x = 0, y = 0, style;
 
-                while (navigator.browser !== 'iOS' && node && node.style) {
+                while ( (typeof ejecta  === 'undefined') && navigator.browser !== 'iOS' && node && node.style) {
                     if (node.currentStyle) {
                         style = node.currentStyle['position'];
                     } else {
