@@ -21,11 +21,11 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
-Version: . build: 78
+Version: . build: 83
 
 Created on:
 DATE: 2013-01-11
-TIME: 10:53:50
+TIME: 11:42:58
 */
 
 
@@ -11822,7 +11822,7 @@ CAAT.Module( {
         (function() {
 
             CAAT.setCursor= function(cursor) {
-                if ( navigator.browser!=='iOS' ) {
+                if ( (typeof ejecta === "") && navigator.browser!=='iOS' ) {
                     document.body.style.cursor= cursor;
                 }
             };
@@ -16101,6 +16101,9 @@ CAAT.Module({
                 this.mouseUp=       function() {};
                 this.mouseClick=    function() {};
                 this.mouseDrag=     function() {};
+                this.touchStart= function(){};
+                this.touchMove= function(){};
+                this.touchEnd =function(){};
                 return this;
             },
             /**
@@ -16194,6 +16197,23 @@ CAAT.Module({
                     }
 
                     this.setSpriteIndex(this.iPress);
+                };
+                this.touchStart = function(e){
+                    if (!this.enabled) {
+                        return;
+                    }
+
+                    this.setSpriteIndex(this.iPress);
+                };
+
+                this.touchEnd = function (e) {
+                    if (!this.enabled) {
+                        return;
+                    }
+
+                    this.setSpriteIndex(this.iNormal);
+                    CAAT.setCursor('default');
+                    this.actionPerformed(e);
                 };
 
                 /**

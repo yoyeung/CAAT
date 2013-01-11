@@ -2185,7 +2185,7 @@ CAAT.Module({
                     this.setSpriteIndex(this.iPress);
                 };
 
-                this.touchEnd = function (mouseEvent) {
+                this.touchEnd = function (e) {
                     if (!this.enabled) {
                         return;
                     }

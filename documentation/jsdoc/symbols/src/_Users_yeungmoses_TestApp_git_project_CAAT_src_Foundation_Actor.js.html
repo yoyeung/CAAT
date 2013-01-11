@@ -2087,153 +2087,173 @@
 <span class='line'>2080</span> </span><span class="WHIT">                </span><span class="NAME">this.mouseUp</span><span class="PUNC">=</span><span class="WHIT">       </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="PUNC">}</span><span class="PUNC">;</span><span class="WHIT">
 <span class='line'>2081</span> </span><span class="WHIT">                </span><span class="NAME">this.mouseClick</span><span class="PUNC">=</span><span class="WHIT">    </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="PUNC">}</span><span class="PUNC">;</span><span class="WHIT">
 <span class='line'>2082</span> </span><span class="WHIT">                </span><span class="NAME">this.mouseDrag</span><span class="PUNC">=</span><span class="WHIT">     </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="PUNC">}</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>2083</span> </span><span class="WHIT">                </span><span class="KEYW">return</span><span class="WHIT"> </span><span class="KEYW">this</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>2084</span> </span><span class="WHIT">            </span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
-<span class='line'>2085</span> </span><span class="WHIT">            </span><span class="COMM">/**
-<span class='line'>2086</span>              * Set this actor behavior as if it were a Button. The actor size will be set as SpriteImage's
-<span class='line'>2087</span>              * single size.
-<span class='line'>2088</span>              *
-<span class='line'>2089</span>              * @param buttonImage {CAAT.Foundation.SpriteImage} sprite image with button's state images.
-<span class='line'>2090</span>              * @param iNormal {number} button's normal state image index
-<span class='line'>2091</span>              * @param iOver {number} button's mouse over state image index
-<span class='line'>2092</span>              * @param iPress {number} button's pressed state image index
-<span class='line'>2093</span>              * @param iDisabled {number} button's disabled state image index
-<span class='line'>2094</span>              * @param fn {function(button{CAAT.Foundation.Actor})} callback function
-<span class='line'>2095</span>              */</span><span class="WHIT">
-<span class='line'>2096</span> </span><span class="WHIT">            </span><span class="NAME">setAsButton</span><span class="PUNC">:</span><span class="KEYW">function</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">buttonImage</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">iNormal</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">iOver</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">iPress</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">iDisabled</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">fn</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'>2097</span> 
-<span class='line'>2098</span> </span><span class="WHIT">                </span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">me</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">this</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>2099</span> 
-<span class='line'>2100</span> </span><span class="WHIT">                </span><span class="NAME">this.setBackgroundImage</span><span class="PUNC">(</span><span class="NAME">buttonImage</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="KEYW">true</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>2101</span> 
-<span class='line'>2102</span> </span><span class="WHIT">                </span><span class="NAME">this.iNormal</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">iNormal</span><span class="WHIT"> </span><span class="PUNC">||</span><span class="WHIT"> </span><span class="NUMB">0</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>2103</span> </span><span class="WHIT">                </span><span class="NAME">this.iOver</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">iOver</span><span class="WHIT"> </span><span class="PUNC">||</span><span class="WHIT"> </span><span class="NAME">this.iNormal</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>2104</span> </span><span class="WHIT">                </span><span class="NAME">this.iPress</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">iPress</span><span class="WHIT"> </span><span class="PUNC">||</span><span class="WHIT"> </span><span class="NAME">this.iNormal</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>2105</span> </span><span class="WHIT">                </span><span class="NAME">this.iDisabled</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">iDisabled</span><span class="WHIT"> </span><span class="PUNC">||</span><span class="WHIT"> </span><span class="NAME">this.iNormal</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>2106</span> </span><span class="WHIT">                </span><span class="NAME">this.fnOnClick</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">fn</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>2107</span> </span><span class="WHIT">                </span><span class="NAME">this.enabled</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">true</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>2108</span> 
-<span class='line'>2109</span> </span><span class="WHIT">                </span><span class="NAME">this.setSpriteIndex</span><span class="PUNC">(</span><span class="NAME">iNormal</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>2110</span> 
-<span class='line'>2111</span> </span><span class="WHIT">                </span><span class="COMM">/**
-<span class='line'>2112</span>                  * Enable or disable the button.
-<span class='line'>2113</span>                  * @param enabled {boolean}
-<span class='line'>2114</span>                  * @ignore
-<span class='line'>2115</span>                  */</span><span class="WHIT">
-<span class='line'>2116</span> </span><span class="WHIT">                </span><span class="NAME">this.setEnabled</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">enabled</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'>2117</span> </span><span class="WHIT">                    </span><span class="NAME">this.enabled</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">enabled</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>2118</span> </span><span class="WHIT">                    </span><span class="NAME">this.setSpriteIndex</span><span class="PUNC">(</span><span class="NAME">this.enabled</span><span class="WHIT"> </span><span class="PUNC">?</span><span class="WHIT"> </span><span class="NAME">this.iNormal</span><span class="WHIT"> </span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NAME">this.iDisabled</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>2119</span> </span><span class="WHIT">                    </span><span class="KEYW">return</span><span class="WHIT"> </span><span class="KEYW">this</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>2120</span> </span><span class="WHIT">                </span><span class="PUNC">}</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>2121</span> 
-<span class='line'>2122</span> </span><span class="WHIT">                </span><span class="COMM">/**
-<span class='line'>2123</span>                  * This method will be called by CAAT *before* the mouseUp event is fired.
-<span class='line'>2124</span>                  * @param event {CAAT.Event.MouseEvent}
-<span class='line'>2125</span>                  * @ignore
-<span class='line'>2126</span>                  */</span><span class="WHIT">
-<span class='line'>2127</span> </span><span class="WHIT">                </span><span class="NAME">this.actionPerformed</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">event</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'>2128</span> </span><span class="WHIT">                    </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">this.enabled</span><span class="WHIT"> </span><span class="PUNC">&&</span><span class="WHIT"> </span><span class="NAME">this.fnOnClick</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'>2129</span> </span><span class="WHIT">                        </span><span class="NAME">this.fnOnClick</span><span class="PUNC">(</span><span class="KEYW">this</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>2130</span> </span><span class="WHIT">                    </span><span class="PUNC">}</span><span class="WHIT">
-<span class='line'>2131</span> </span><span class="WHIT">                </span><span class="PUNC">}</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>2132</span> 
-<span class='line'>2133</span> </span><span class="WHIT">                </span><span class="COMM">/**
-<span class='line'>2134</span>                  * Button's mouse enter handler. It makes the button provide visual feedback
-<span class='line'>2135</span>                  * @param mouseEvent {CAAT.Event.MouseEvent}
-<span class='line'>2136</span>                  * @ignore
-<span class='line'>2137</span>                  */</span><span class="WHIT">
-<span class='line'>2138</span> </span><span class="WHIT">                </span><span class="NAME">this.mouseEnter</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">mouseEvent</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'>2139</span> </span><span class="WHIT">                    </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="PUNC">!</span><span class="NAME">this.enabled</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'>2140</span> </span><span class="WHIT">                        </span><span class="KEYW">return</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>2141</span> </span><span class="WHIT">                    </span><span class="PUNC">}</span><span class="WHIT">
-<span class='line'>2142</span> 
-<span class='line'>2143</span> </span><span class="WHIT">                    </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">this.dragging</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'>2144</span> </span><span class="WHIT">                        </span><span class="NAME">this.setSpriteIndex</span><span class="PUNC">(</span><span class="NAME">this.iPress</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>2145</span> </span><span class="WHIT">                    </span><span class="PUNC">}</span><span class="WHIT"> </span><span class="KEYW">else</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'>2146</span> </span><span class="WHIT">                        </span><span class="NAME">this.setSpriteIndex</span><span class="PUNC">(</span><span class="NAME">this.iOver</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>2147</span> </span><span class="WHIT">                    </span><span class="PUNC">}</span><span class="WHIT">
-<span class='line'>2148</span> </span><span class="WHIT">                    </span><span class="NAME">CAAT.setCursor</span><span class="PUNC">(</span><span class="STRN">'pointer'</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>2149</span> </span><span class="WHIT">                </span><span class="PUNC">}</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>2150</span> 
-<span class='line'>2151</span> </span><span class="WHIT">                </span><span class="COMM">/**
-<span class='line'>2152</span>                  * Button's mouse exit handler. Release visual apperance.
-<span class='line'>2153</span>                  * @param mouseEvent {CAAT.MouseEvent}
-<span class='line'>2154</span>                  * @ignore
-<span class='line'>2155</span>                  */</span><span class="WHIT">
-<span class='line'>2156</span> </span><span class="WHIT">                </span><span class="NAME">this.mouseExit</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">mouseEvent</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'>2157</span> </span><span class="WHIT">                    </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="PUNC">!</span><span class="NAME">this.enabled</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'>2158</span> </span><span class="WHIT">                        </span><span class="KEYW">return</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>2159</span> </span><span class="WHIT">                    </span><span class="PUNC">}</span><span class="WHIT">
-<span class='line'>2160</span> 
-<span class='line'>2161</span> </span><span class="WHIT">                    </span><span class="NAME">this.setSpriteIndex</span><span class="PUNC">(</span><span class="NAME">this.iNormal</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>2162</span> </span><span class="WHIT">                    </span><span class="NAME">CAAT.setCursor</span><span class="PUNC">(</span><span class="STRN">'default'</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>2163</span> </span><span class="WHIT">                </span><span class="PUNC">}</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>2164</span> 
-<span class='line'>2165</span> </span><span class="WHIT">                </span><span class="COMM">/**
-<span class='line'>2166</span>                  * Button's mouse down handler.
-<span class='line'>2167</span>                  * @param mouseEvent {CAAT.MouseEvent}
-<span class='line'>2168</span>                  * @ignore
-<span class='line'>2169</span>                  */</span><span class="WHIT">
-<span class='line'>2170</span> </span><span class="WHIT">                </span><span class="NAME">this.mouseDown</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">mouseEvent</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'>2171</span> </span><span class="WHIT">                    </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="PUNC">!</span><span class="NAME">this.enabled</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'>2172</span> </span><span class="WHIT">                        </span><span class="KEYW">return</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>2173</span> </span><span class="WHIT">                    </span><span class="PUNC">}</span><span class="WHIT">
-<span class='line'>2174</span> 
-<span class='line'>2175</span> </span><span class="WHIT">                    </span><span class="NAME">this.setSpriteIndex</span><span class="PUNC">(</span><span class="NAME">this.iPress</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>2176</span> </span><span class="WHIT">                </span><span class="PUNC">}</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>2083</span> </span><span class="WHIT">                </span><span class="NAME">this.touchStart</span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">{</span><span class="PUNC">}</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>2084</span> </span><span class="WHIT">                </span><span class="NAME">this.touchMove</span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">{</span><span class="PUNC">}</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>2085</span> </span><span class="WHIT">                </span><span class="NAME">this.touchEnd</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">{</span><span class="PUNC">}</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>2086</span> </span><span class="WHIT">                </span><span class="KEYW">return</span><span class="WHIT"> </span><span class="KEYW">this</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>2087</span> </span><span class="WHIT">            </span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>2088</span> </span><span class="WHIT">            </span><span class="COMM">/**
+<span class='line'>2089</span>              * Set this actor behavior as if it were a Button. The actor size will be set as SpriteImage's
+<span class='line'>2090</span>              * single size.
+<span class='line'>2091</span>              *
+<span class='line'>2092</span>              * @param buttonImage {CAAT.Foundation.SpriteImage} sprite image with button's state images.
+<span class='line'>2093</span>              * @param iNormal {number} button's normal state image index
+<span class='line'>2094</span>              * @param iOver {number} button's mouse over state image index
+<span class='line'>2095</span>              * @param iPress {number} button's pressed state image index
+<span class='line'>2096</span>              * @param iDisabled {number} button's disabled state image index
+<span class='line'>2097</span>              * @param fn {function(button{CAAT.Foundation.Actor})} callback function
+<span class='line'>2098</span>              */</span><span class="WHIT">
+<span class='line'>2099</span> </span><span class="WHIT">            </span><span class="NAME">setAsButton</span><span class="PUNC">:</span><span class="KEYW">function</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">buttonImage</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">iNormal</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">iOver</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">iPress</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">iDisabled</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">fn</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>2100</span> 
+<span class='line'>2101</span> </span><span class="WHIT">                </span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">me</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">this</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>2102</span> 
+<span class='line'>2103</span> </span><span class="WHIT">                </span><span class="NAME">this.setBackgroundImage</span><span class="PUNC">(</span><span class="NAME">buttonImage</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="KEYW">true</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>2104</span> 
+<span class='line'>2105</span> </span><span class="WHIT">                </span><span class="NAME">this.iNormal</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">iNormal</span><span class="WHIT"> </span><span class="PUNC">||</span><span class="WHIT"> </span><span class="NUMB">0</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>2106</span> </span><span class="WHIT">                </span><span class="NAME">this.iOver</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">iOver</span><span class="WHIT"> </span><span class="PUNC">||</span><span class="WHIT"> </span><span class="NAME">this.iNormal</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>2107</span> </span><span class="WHIT">                </span><span class="NAME">this.iPress</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">iPress</span><span class="WHIT"> </span><span class="PUNC">||</span><span class="WHIT"> </span><span class="NAME">this.iNormal</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>2108</span> </span><span class="WHIT">                </span><span class="NAME">this.iDisabled</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">iDisabled</span><span class="WHIT"> </span><span class="PUNC">||</span><span class="WHIT"> </span><span class="NAME">this.iNormal</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>2109</span> </span><span class="WHIT">                </span><span class="NAME">this.fnOnClick</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">fn</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>2110</span> </span><span class="WHIT">                </span><span class="NAME">this.enabled</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">true</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>2111</span> 
+<span class='line'>2112</span> </span><span class="WHIT">                </span><span class="NAME">this.setSpriteIndex</span><span class="PUNC">(</span><span class="NAME">iNormal</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>2113</span> 
+<span class='line'>2114</span> </span><span class="WHIT">                </span><span class="COMM">/**
+<span class='line'>2115</span>                  * Enable or disable the button.
+<span class='line'>2116</span>                  * @param enabled {boolean}
+<span class='line'>2117</span>                  * @ignore
+<span class='line'>2118</span>                  */</span><span class="WHIT">
+<span class='line'>2119</span> </span><span class="WHIT">                </span><span class="NAME">this.setEnabled</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">enabled</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>2120</span> </span><span class="WHIT">                    </span><span class="NAME">this.enabled</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">enabled</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>2121</span> </span><span class="WHIT">                    </span><span class="NAME">this.setSpriteIndex</span><span class="PUNC">(</span><span class="NAME">this.enabled</span><span class="WHIT"> </span><span class="PUNC">?</span><span class="WHIT"> </span><span class="NAME">this.iNormal</span><span class="WHIT"> </span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NAME">this.iDisabled</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>2122</span> </span><span class="WHIT">                    </span><span class="KEYW">return</span><span class="WHIT"> </span><span class="KEYW">this</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>2123</span> </span><span class="WHIT">                </span><span class="PUNC">}</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>2124</span> 
+<span class='line'>2125</span> </span><span class="WHIT">                </span><span class="COMM">/**
+<span class='line'>2126</span>                  * This method will be called by CAAT *before* the mouseUp event is fired.
+<span class='line'>2127</span>                  * @param event {CAAT.Event.MouseEvent}
+<span class='line'>2128</span>                  * @ignore
+<span class='line'>2129</span>                  */</span><span class="WHIT">
+<span class='line'>2130</span> </span><span class="WHIT">                </span><span class="NAME">this.actionPerformed</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">event</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>2131</span> </span><span class="WHIT">                    </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">this.enabled</span><span class="WHIT"> </span><span class="PUNC">&&</span><span class="WHIT"> </span><span class="NAME">this.fnOnClick</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>2132</span> </span><span class="WHIT">                        </span><span class="NAME">this.fnOnClick</span><span class="PUNC">(</span><span class="KEYW">this</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>2133</span> </span><span class="WHIT">                    </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>2134</span> </span><span class="WHIT">                </span><span class="PUNC">}</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>2135</span> 
+<span class='line'>2136</span> </span><span class="WHIT">                </span><span class="COMM">/**
+<span class='line'>2137</span>                  * Button's mouse enter handler. It makes the button provide visual feedback
+<span class='line'>2138</span>                  * @param mouseEvent {CAAT.Event.MouseEvent}
+<span class='line'>2139</span>                  * @ignore
+<span class='line'>2140</span>                  */</span><span class="WHIT">
+<span class='line'>2141</span> </span><span class="WHIT">                </span><span class="NAME">this.mouseEnter</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">mouseEvent</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>2142</span> </span><span class="WHIT">                    </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="PUNC">!</span><span class="NAME">this.enabled</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>2143</span> </span><span class="WHIT">                        </span><span class="KEYW">return</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>2144</span> </span><span class="WHIT">                    </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>2145</span> 
+<span class='line'>2146</span> </span><span class="WHIT">                    </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">this.dragging</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>2147</span> </span><span class="WHIT">                        </span><span class="NAME">this.setSpriteIndex</span><span class="PUNC">(</span><span class="NAME">this.iPress</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>2148</span> </span><span class="WHIT">                    </span><span class="PUNC">}</span><span class="WHIT"> </span><span class="KEYW">else</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>2149</span> </span><span class="WHIT">                        </span><span class="NAME">this.setSpriteIndex</span><span class="PUNC">(</span><span class="NAME">this.iOver</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>2150</span> </span><span class="WHIT">                    </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>2151</span> </span><span class="WHIT">                    </span><span class="NAME">CAAT.setCursor</span><span class="PUNC">(</span><span class="STRN">'pointer'</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>2152</span> </span><span class="WHIT">                </span><span class="PUNC">}</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>2153</span> 
+<span class='line'>2154</span> </span><span class="WHIT">                </span><span class="COMM">/**
+<span class='line'>2155</span>                  * Button's mouse exit handler. Release visual apperance.
+<span class='line'>2156</span>                  * @param mouseEvent {CAAT.MouseEvent}
+<span class='line'>2157</span>                  * @ignore
+<span class='line'>2158</span>                  */</span><span class="WHIT">
+<span class='line'>2159</span> </span><span class="WHIT">                </span><span class="NAME">this.mouseExit</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">mouseEvent</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>2160</span> </span><span class="WHIT">                    </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="PUNC">!</span><span class="NAME">this.enabled</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>2161</span> </span><span class="WHIT">                        </span><span class="KEYW">return</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>2162</span> </span><span class="WHIT">                    </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>2163</span> 
+<span class='line'>2164</span> </span><span class="WHIT">                    </span><span class="NAME">this.setSpriteIndex</span><span class="PUNC">(</span><span class="NAME">this.iNormal</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>2165</span> </span><span class="WHIT">                    </span><span class="NAME">CAAT.setCursor</span><span class="PUNC">(</span><span class="STRN">'default'</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>2166</span> </span><span class="WHIT">                </span><span class="PUNC">}</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>2167</span> 
+<span class='line'>2168</span> </span><span class="WHIT">                </span><span class="COMM">/**
+<span class='line'>2169</span>                  * Button's mouse down handler.
+<span class='line'>2170</span>                  * @param mouseEvent {CAAT.MouseEvent}
+<span class='line'>2171</span>                  * @ignore
+<span class='line'>2172</span>                  */</span><span class="WHIT">
+<span class='line'>2173</span> </span><span class="WHIT">                </span><span class="NAME">this.mouseDown</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">mouseEvent</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>2174</span> </span><span class="WHIT">                    </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="PUNC">!</span><span class="NAME">this.enabled</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>2175</span> </span><span class="WHIT">                        </span><span class="KEYW">return</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>2176</span> </span><span class="WHIT">                    </span><span class="PUNC">}</span><span class="WHIT">
 <span class='line'>2177</span> 
-<span class='line'>2178</span> </span><span class="WHIT">                </span><span class="COMM">/**
-<span class='line'>2179</span>                  * Button's mouse up handler.
-<span class='line'>2180</span>                  * @param mouseEvent {CAAT.MouseEvent}
-<span class='line'>2181</span>                  * @ignore
-<span class='line'>2182</span>                  */</span><span class="WHIT">
-<span class='line'>2183</span> </span><span class="WHIT">                </span><span class="NAME">this.mouseUp</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">mouseEvent</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'>2184</span> </span><span class="WHIT">                    </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="PUNC">!</span><span class="NAME">this.enabled</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'>2185</span> </span><span class="WHIT">                        </span><span class="KEYW">return</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>2186</span> </span><span class="WHIT">                    </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>2178</span> </span><span class="WHIT">                    </span><span class="NAME">this.setSpriteIndex</span><span class="PUNC">(</span><span class="NAME">this.iPress</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>2179</span> </span><span class="WHIT">                </span><span class="PUNC">}</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>2180</span> </span><span class="WHIT">                </span><span class="NAME">this.touchStart</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">e</span><span class="PUNC">)</span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>2181</span> </span><span class="WHIT">                    </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="PUNC">!</span><span class="NAME">this.enabled</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>2182</span> </span><span class="WHIT">                        </span><span class="KEYW">return</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>2183</span> </span><span class="WHIT">                    </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>2184</span> 
+<span class='line'>2185</span> </span><span class="WHIT">                    </span><span class="NAME">this.setSpriteIndex</span><span class="PUNC">(</span><span class="NAME">this.iPress</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>2186</span> </span><span class="WHIT">                </span><span class="PUNC">}</span><span class="PUNC">;</span><span class="WHIT">
 <span class='line'>2187</span> 
-<span class='line'>2188</span> </span><span class="WHIT">                    </span><span class="NAME">this.setSpriteIndex</span><span class="PUNC">(</span><span class="NAME">this.iNormal</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>2189</span> </span><span class="WHIT">                    </span><span class="NAME">this.dragging</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">false</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>2190</span> </span><span class="WHIT">                </span><span class="PUNC">}</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>2191</span> 
-<span class='line'>2192</span> </span><span class="WHIT">                </span><span class="COMM">/**
-<span class='line'>2193</span>                  * Button's mouse click handler. Do nothing by default. This event handler will be
-<span class='line'>2194</span>                  * called ONLY if it has not been drag on the button.
-<span class='line'>2195</span>                  * @param mouseEvent {CAAT.MouseEvent}
-<span class='line'>2196</span>                  * @ignore
-<span class='line'>2197</span>                  */</span><span class="WHIT">
-<span class='line'>2198</span> </span><span class="WHIT">                </span><span class="NAME">this.mouseClick</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">mouseEvent</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'>2199</span> </span><span class="WHIT">                </span><span class="PUNC">}</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>2200</span> 
-<span class='line'>2201</span> </span><span class="WHIT">                </span><span class="COMM">/**
-<span class='line'>2202</span>                  * Button's mouse drag handler.
-<span class='line'>2203</span>                  * @param mouseEvent {CAAT.MouseEvent}
-<span class='line'>2204</span>                  * @ignore
-<span class='line'>2205</span>                  */</span><span class="WHIT">
-<span class='line'>2206</span> </span><span class="WHIT">                </span><span class="NAME">this.mouseDrag</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">mouseEvent</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'>2207</span> </span><span class="WHIT">                    </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="PUNC">!</span><span class="NAME">this.enabled</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'>2208</span> </span><span class="WHIT">                        </span><span class="KEYW">return</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>2209</span> </span><span class="WHIT">                    </span><span class="PUNC">}</span><span class="WHIT">
-<span class='line'>2210</span> 
-<span class='line'>2211</span> </span><span class="WHIT">                    </span><span class="NAME">this.dragging</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">true</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>2212</span> </span><span class="WHIT">                </span><span class="PUNC">}</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>2213</span> 
-<span class='line'>2214</span> </span><span class="WHIT">                </span><span class="NAME">this.setButtonImageIndex</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">_normal</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">_over</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">_press</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">_disabled</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'>2215</span> </span><span class="WHIT">                    </span><span class="NAME">this.iNormal</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">_normal</span><span class="WHIT"> </span><span class="PUNC">||</span><span class="WHIT"> </span><span class="NUMB">0</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>2216</span> </span><span class="WHIT">                    </span><span class="NAME">this.iOver</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">_over</span><span class="WHIT"> </span><span class="PUNC">||</span><span class="WHIT"> </span><span class="NAME">this.iNormal</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>2217</span> </span><span class="WHIT">                    </span><span class="NAME">this.iPress</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">_press</span><span class="WHIT"> </span><span class="PUNC">||</span><span class="WHIT"> </span><span class="NAME">this.iNormal</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>2218</span> </span><span class="WHIT">                    </span><span class="NAME">this.iDisabled</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">_disabled</span><span class="WHIT"> </span><span class="PUNC">||</span><span class="WHIT"> </span><span class="NAME">this.iNormal</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>2219</span> </span><span class="WHIT">                    </span><span class="NAME">this.setSpriteIndex</span><span class="PUNC">(</span><span class="NAME">this.iNormal</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>2220</span> </span><span class="WHIT">                    </span><span class="KEYW">return</span><span class="WHIT"> </span><span class="KEYW">this</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>2221</span> </span><span class="WHIT">                </span><span class="PUNC">}</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>2222</span> 
-<span class='line'>2223</span> </span><span class="WHIT">                </span><span class="KEYW">return</span><span class="WHIT"> </span><span class="KEYW">this</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>2224</span> </span><span class="WHIT">            </span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
-<span class='line'>2225</span> 
-<span class='line'>2226</span> </span><span class="WHIT">            </span><span class="NAME">findActorById</span><span class="WHIT"> </span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">id</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'>2227</span> </span><span class="WHIT">                </span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">this.id</span><span class="PUNC">===</span><span class="NAME">id</span><span class="WHIT"> </span><span class="PUNC">?</span><span class="WHIT"> </span><span class="KEYW">this</span><span class="WHIT"> </span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">null</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>2228</span> </span><span class="WHIT">            </span><span class="PUNC">}</span><span class="WHIT">
-<span class='line'>2229</span> </span><span class="WHIT">        </span><span class="PUNC">}</span><span class="WHIT">
-<span class='line'>2230</span> </span><span class="WHIT">    </span><span class="PUNC">}</span><span class="WHIT">
-<span class='line'>2231</span> </span><span class="PUNC">}</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>2232</span> </span></pre></body></html>
+<span class='line'>2188</span> </span><span class="WHIT">                </span><span class="NAME">this.touchEnd</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">mouseEvent</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>2189</span> </span><span class="WHIT">                    </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="PUNC">!</span><span class="NAME">this.enabled</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>2190</span> </span><span class="WHIT">                        </span><span class="KEYW">return</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>2191</span> </span><span class="WHIT">                    </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>2192</span> 
+<span class='line'>2193</span> </span><span class="WHIT">                    </span><span class="NAME">this.setSpriteIndex</span><span class="PUNC">(</span><span class="NAME">this.iNormal</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>2194</span> </span><span class="WHIT">                    </span><span class="NAME">CAAT.setCursor</span><span class="PUNC">(</span><span class="STRN">'default'</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>2195</span> </span><span class="WHIT">                    </span><span class="NAME">this.actionPerformed</span><span class="PUNC">(</span><span class="NAME">e</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>2196</span> </span><span class="WHIT">                </span><span class="PUNC">}</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>2197</span> 
+<span class='line'>2198</span> </span><span class="WHIT">                </span><span class="COMM">/**
+<span class='line'>2199</span>                  * Button's mouse up handler.
+<span class='line'>2200</span>                  * @param mouseEvent {CAAT.MouseEvent}
+<span class='line'>2201</span>                  * @ignore
+<span class='line'>2202</span>                  */</span><span class="WHIT">
+<span class='line'>2203</span> </span><span class="WHIT">                </span><span class="NAME">this.mouseUp</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">mouseEvent</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>2204</span> </span><span class="WHIT">                    </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="PUNC">!</span><span class="NAME">this.enabled</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>2205</span> </span><span class="WHIT">                        </span><span class="KEYW">return</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>2206</span> </span><span class="WHIT">                    </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>2207</span> 
+<span class='line'>2208</span> </span><span class="WHIT">                    </span><span class="NAME">this.setSpriteIndex</span><span class="PUNC">(</span><span class="NAME">this.iNormal</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>2209</span> </span><span class="WHIT">                    </span><span class="NAME">this.dragging</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">false</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>2210</span> </span><span class="WHIT">                </span><span class="PUNC">}</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>2211</span> 
+<span class='line'>2212</span> </span><span class="WHIT">                </span><span class="COMM">/**
+<span class='line'>2213</span>                  * Button's mouse click handler. Do nothing by default. This event handler will be
+<span class='line'>2214</span>                  * called ONLY if it has not been drag on the button.
+<span class='line'>2215</span>                  * @param mouseEvent {CAAT.MouseEvent}
+<span class='line'>2216</span>                  * @ignore
+<span class='line'>2217</span>                  */</span><span class="WHIT">
+<span class='line'>2218</span> </span><span class="WHIT">                </span><span class="NAME">this.mouseClick</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">mouseEvent</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>2219</span> </span><span class="WHIT">                </span><span class="PUNC">}</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>2220</span> 
+<span class='line'>2221</span> </span><span class="WHIT">                </span><span class="COMM">/**
+<span class='line'>2222</span>                  * Button's mouse drag handler.
+<span class='line'>2223</span>                  * @param mouseEvent {CAAT.MouseEvent}
+<span class='line'>2224</span>                  * @ignore
+<span class='line'>2225</span>                  */</span><span class="WHIT">
+<span class='line'>2226</span> </span><span class="WHIT">                </span><span class="NAME">this.mouseDrag</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">mouseEvent</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>2227</span> </span><span class="WHIT">                    </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="PUNC">!</span><span class="NAME">this.enabled</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>2228</span> </span><span class="WHIT">                        </span><span class="KEYW">return</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>2229</span> </span><span class="WHIT">                    </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>2230</span> 
+<span class='line'>2231</span> </span><span class="WHIT">                    </span><span class="NAME">this.dragging</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">true</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>2232</span> </span><span class="WHIT">                </span><span class="PUNC">}</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>2233</span> 
+<span class='line'>2234</span> </span><span class="WHIT">                </span><span class="NAME">this.setButtonImageIndex</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">_normal</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">_over</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">_press</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">_disabled</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>2235</span> </span><span class="WHIT">                    </span><span class="NAME">this.iNormal</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">_normal</span><span class="WHIT"> </span><span class="PUNC">||</span><span class="WHIT"> </span><span class="NUMB">0</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>2236</span> </span><span class="WHIT">                    </span><span class="NAME">this.iOver</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">_over</span><span class="WHIT"> </span><span class="PUNC">||</span><span class="WHIT"> </span><span class="NAME">this.iNormal</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>2237</span> </span><span class="WHIT">                    </span><span class="NAME">this.iPress</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">_press</span><span class="WHIT"> </span><span class="PUNC">||</span><span class="WHIT"> </span><span class="NAME">this.iNormal</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>2238</span> </span><span class="WHIT">                    </span><span class="NAME">this.iDisabled</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">_disabled</span><span class="WHIT"> </span><span class="PUNC">||</span><span class="WHIT"> </span><span class="NAME">this.iNormal</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>2239</span> </span><span class="WHIT">                    </span><span class="NAME">this.setSpriteIndex</span><span class="PUNC">(</span><span class="NAME">this.iNormal</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>2240</span> </span><span class="WHIT">                    </span><span class="KEYW">return</span><span class="WHIT"> </span><span class="KEYW">this</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>2241</span> </span><span class="WHIT">                </span><span class="PUNC">}</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>2242</span> 
+<span class='line'>2243</span> </span><span class="WHIT">                </span><span class="KEYW">return</span><span class="WHIT"> </span><span class="KEYW">this</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>2244</span> </span><span class="WHIT">            </span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>2245</span> 
+<span class='line'>2246</span> </span><span class="WHIT">            </span><span class="NAME">findActorById</span><span class="WHIT"> </span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">id</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>2247</span> </span><span class="WHIT">                </span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">this.id</span><span class="PUNC">===</span><span class="NAME">id</span><span class="WHIT"> </span><span class="PUNC">?</span><span class="WHIT"> </span><span class="KEYW">this</span><span class="WHIT"> </span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">null</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>2248</span> </span><span class="WHIT">            </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>2249</span> </span><span class="WHIT">        </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>2250</span> </span><span class="WHIT">    </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>2251</span> </span><span class="PUNC">}</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>2252</span> </span></pre></body></html>

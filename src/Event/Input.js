@@ -10,7 +10,7 @@ CAAT.Module( {
         (function() {
 
             CAAT.setCursor= function(cursor) {
-                if ( navigator.browser!=='iOS' ) {
+                if ( (typeof ejecta === "") && navigator.browser!=='iOS' ) {
                     document.body.style.cursor= cursor;
                 }
             };

@@ -21,11 +21,11 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
-Version: . build: 78
+Version: . build: 83
 
 Created on:
 DATE: 2013-01-11
-TIME: 10:53:51
+TIME: 11:42:59
 */
 
 
@@ -11823,7 +11823,7 @@ CAAT.Module( {
         (function() {
 
             CAAT.setCursor= function(cursor) {
-                if ( navigator.browser!=='iOS' ) {
+                if ( (typeof ejecta === "") && navigator.browser!=='iOS' ) {
                     document.body.style.cursor= cursor;
                 }
             };
