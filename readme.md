@@ -1,6 +1,6 @@
 ##CAAT: Canvas Advanced Animation Tookit##
 
-This is an enhancement for CAAT and let it work wirh Ejecta.
+This is an enhancement for CAAT and let it work with Ejecta.
 I also with on Ejecta for extra event enhancement or new features like facebook share.
 Please follow me and share your comment.
 
