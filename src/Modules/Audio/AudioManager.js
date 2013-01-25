@@ -57,23 +57,23 @@ CAAT.Module({
                             'ended',
                             // on sound end, set channel to available channels list.
                             function (audioEvent) {
-                                var target = audioEvent.target;
+                                // var target = audioEvent.target;
                                 var i;
 
                                 // remove from workingChannels
                                 for (i = 0; i < me.workingChannels.length; i++) {
-                                    if (me.workingChannels[i] === target) {
+                                    if (me.workingChannels[i] === this) {
                                         me.workingChannels.splice(i, 1);
                                         break;
                                     }
                                 }
 
-                                if (target.caat_callback) {
-                                    target.caat_callback(target.caat_id);
+                                if (this.caat_callback) {
+                                    this.caat_callback(this.caat_id);
                                 }
 
                                 // set back to channels.
-                                me.channels.push(target);
+                                me.channels.push(this);
                             },
                             false
                         );
@@ -266,8 +266,8 @@ CAAT.Module({
                                 'ended',
                                 // on sound end, set channel to available channels list.
                                 function (audioEvent) {
-                                    var target = audioEvent.target;
-                                    target.currentTime = 0;
+                                    // var target = audioEvent.target;
+                                    this.currentTime = 0;
                                 },
                                 false
                             );
@@ -351,8 +351,8 @@ CAAT.Module({
                                 'ended',
                                 // on sound end, set channel to available channels list.
                                 function (audioEvent) {
-                                    var target = audioEvent.target;
-                                    target.currentTime = 0;
+                                    // var target = audioEvent.target;
+                                    this.currentTime = 0;
                                 },
                                 false
                             );
